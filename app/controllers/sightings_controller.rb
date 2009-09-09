@@ -2,7 +2,8 @@ class SightingsController < ApplicationController
   before_filter :require_user
 
   def create
-    @sighting = Sighting.create!(:kana_id => params[:sighting][:kana_id], :user_id => current_user.id)
+    @sighting = Sighting.new(params[:sighting].merge(:user_id => current_user.id))
+    @sighting.save!
 
     head :ok
   rescue
