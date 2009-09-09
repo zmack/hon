@@ -1,0 +1,2 @@
+module KanasHelper
+end
