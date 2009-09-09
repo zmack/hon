@@ -3,3 +3,5 @@
 
 en:
   hello: "Hello world"
+  error_messages:
+    login_not_found: "No login dood"
