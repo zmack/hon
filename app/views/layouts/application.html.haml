@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title== Know the kana ? #{@title}
+    = stylesheet_link_tag 'application'
+    = yield :head
+  %body
+    .header
+      %h1 Can you kana ?
+      %ul.navigation
+        %li List that kana !
+      .current_user
+        Logged in as
+        = current_user.login
+    = yield :layout
+    / Now we include the javascripts !
+    = javascript_include_tag 'jquery-1.3.2'
+    = yield :javascript
+
