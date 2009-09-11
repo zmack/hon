@@ -1,0 +1,13 @@
+- content_for :javascript do
+  = javascript_include_tag 'kana_quiz' 
+
+- form_tag nil, :id => 'check_kana' do
+  %p#kana
+  = text_field_tag :romaji
+  = submit_tag 'Is it ?'
+
+- form_tag(nil, :id => 'pick_kanas') do
+  = submit_tag 'Start', :id => 'start'
+  %ul
+    = render :partial => 'kana_item', :collection => @kanas
+
