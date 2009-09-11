@@ -1,0 +1,41 @@
+body {
+  font-family: Trebuchet MS;
+  margin: 0px; }
+
+#header {
+  background-color: #DEE;
+  padding: 1em; }
+  #header h1 {
+    margin: 0px; }
+
+#pick_kanas ul {
+  list-style: none; }
+  #pick_kanas ul li {
+    display: inline;
+    float: left;
+    margin: .5em;
+    cursor: default;
+    background-color: #DDE;
+    text-align: center;
+    -moz-user-select: none;
+    border: 1px solid transparent; }
+    #pick_kanas ul li:hover {
+      background-color: #DFF; }
+    #pick_kanas ul li em {
+      padding: .2em;
+      font-size: 2em; }
+    #pick_kanas ul li span {
+      padding: .2em;
+      background-color: #ABE; }
+    #pick_kanas ul li em, #pick_kanas ul li span {
+      display: block;
+      font-style: normal; }
+  #pick_kanas ul li.selected {
+    background-color: #bbd;
+    border: 1px solid #EED; }
+
+#start {
+  clear: both; }
+
+#kana {
+  font-size: 3em; }
