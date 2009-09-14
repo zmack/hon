@@ -9,6 +9,7 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
 
   addFormHandlers();
   initKana(getSelectedKana());
+  this.kana_check_element.hide();
 
 
   function addFormHandlers() {
@@ -20,11 +21,31 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
     var romaji = self.romaji_input.value.toLowerCase();
 
     self.kana = getSelectedKana();
-
-    self.romaji_input.focus();
-    self.romaji_input.setSelectionRange(0,romaji.length);
+    hideKanaList();
+    
+    showKanaCheck(function() {
+      self.romaji_input.focus();
+      self.romaji_input.setSelectionRange(0,romaji.length);
+    });
 
     displayNextKana();
+  }
+
+  function hideKanaList() {
+    self.kana_list_element.fadeOut(500);
+  }
+
+  function showKanaList() {
+    self.kana_list_element.fadeIn(500);
+  }
+
+  function showKanaCheck(callback) {
+    console.log('showing kana check');
+    self.kana_check_element.fadeIn(500, callback);
+  }
+  
+  function hideKanaCheck() {
+    self.kana_check_element.fadeOut(500);
   }
 
   function submitKana() {
