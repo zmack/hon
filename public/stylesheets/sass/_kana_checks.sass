@@ -1,0 +1,53 @@
+#pick_kanas
+  ul
+    list-style: none
+    li
+      display: inline
+      float: left
+      margin: .5em
+      cursor: default
+      background-color: #6BEC3B
+      color: #006E4A
+      text-align: center
+      -moz-user-select: none
+      border: 1px solid transparent
+      &:hover
+        background-color: #DFF
+      em
+        padding: .2em
+        font-size: 2em
+      span
+        padding: .2em
+        background-color: #4AA329
+      em, span
+        display: block
+        font-style: normal
+    li.selected
+      background-color: #FFF
+      color: #F00
+      border: 1px solid #FFF
+      span
+        background-color: #EEE
+
+#check_kana
+  width: 400px
+  margin: 0 auto
+  padding: 1em
+  text-align: center
+  background-color: #FFF
+  -moz-border-radius: .5em
+  input
+    display: none
+  #romaji
+    display: block
+    width: 100px
+    border: 0
+    margin: 0 auto
+    text-align: center
+    font-size: 2em
+    background-color: #EEE
+
+#start
+  clear: both
+#kana
+  font-size: 10em

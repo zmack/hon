@@ -1,13 +1,3 @@
-body {
-  font-family: Trebuchet MS;
-  margin: 0px; }
-
-#header {
-  background-color: #DEE;
-  padding: 1em; }
-  #header h1 {
-    margin: 0px; }
-
 #pick_kanas ul {
   list-style: none; }
   #pick_kanas ul li {
@@ -15,7 +5,8 @@ body {
     float: left;
     margin: .5em;
     cursor: default;
-    background-color: #DDE;
+    background-color: #6BEC3B;
+    color: #006E4A;
     text-align: center;
     -moz-user-select: none;
     border: 1px solid transparent; }
@@ -26,16 +17,60 @@ body {
       font-size: 2em; }
     #pick_kanas ul li span {
       padding: .2em;
-      background-color: #ABE; }
+      background-color: #4AA329; }
     #pick_kanas ul li em, #pick_kanas ul li span {
       display: block;
       font-style: normal; }
   #pick_kanas ul li.selected {
-    background-color: #bbd;
-    border: 1px solid #EED; }
+    background-color: #FFF;
+    color: #F00;
+    border: 1px solid #FFF; }
+    #pick_kanas ul li.selected span {
+      background-color: #EEE; }
+
+#check_kana {
+  width: 400px;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+  background-color: #FFF;
+  -moz-border-radius: .5em; }
+  #check_kana input {
+    display: none; }
+  #check_kana #romaji {
+    display: block;
+    width: 100px;
+    border: 0;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2em;
+    background-color: #EEE; }
 
 #start {
   clear: both; }
 
 #kana {
-  font-size: 3em; }
+  font-size: 10em; }
+
+body {
+  font-family: Trebuchet MS;
+  margin: 0px;
+  background-color: #207F60; }
+
+#header {
+  background-color: #8EEC6A;
+  color: #053743;
+  padding: 1em;
+  margin-bottom: 1em; }
+  #header h1 {
+    margin: 0px; }
+  #header #current_user {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    background-color: #6BEC3B;
+    color: #006E4A;
+    width: 200px;
+    height: 50px;
+    padding: .5em;
+    -moz-border-radius: .5em; }
