@@ -50,7 +50,8 @@
   clear: both; }
 
 #kana {
-  font-size: 10em; }
+  font-size: 10em;
+  margin: 0; }
 
 body {
   font-family: Trebuchet MS;
