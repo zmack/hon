@@ -68,7 +68,7 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
     }
 
     self.romaji_input.setSelectionRange(0,romaji.length);
-    displayNextKana();
+    setTimeout(displayNextKana, 300);
     
     return false
   }
@@ -114,19 +114,24 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
   function displayNextKana() {
     var kana = getNextKana(getCurrentKana());
 
-    $(self.kana_displayed).html(kana.kana);
+    if ( self.kana_displayed.innerHTML == '' ) {
+      $(self.kana_displayed).html(kana.kana);
+    }
+
+    $(self.kana_displayed).animate({ color: 'black', duration: 50 }, function(){$(this).html(kana.kana)});
   }
 
   function addCorrectMatch(kana, romaji) {
     var message = 'Correct, sir, ' + kana.kana + ' is ' + kana.romaji;
     self.counter.addCorrect({ title: message });
-    console.log(message);
+
+    $(self.kana_displayed).animate({ color: 'aqua', duration: 50 });
   }
 
   function addFalseMatch(kana, romaji) {
     var message = 'Wrong, ' + kana.kana + ' is ' + kana.romaji;
-
     self.counter.addWrong({ title: message });
-    console.log(message);
+
+    $(self.kana_displayed).animate({ color: 'pink', duration: 50 });
   }
 }
