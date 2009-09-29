@@ -40,7 +40,6 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
   }
 
   function showKanaCheck(callback) {
-    console.log('showing kana check');
     self.kana_check_element.fadeIn(500, callback);
   }
   
@@ -49,10 +48,8 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
   }
 
   function submitKana() {
-    var kana = self.kana_displayed.innerHTML;
     var romaji = self.romaji_input.value.toLowerCase();
-
-    var currentKana = self.kana.key('kana', kana);
+    var currentKana = getCurrentKana();
 
     if ( currentKana.romaji == romaji ) {
       addCorrectMatch(currentKana, romaji);
@@ -64,6 +61,12 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
     displayNextKana();
     
     return false
+  }
+
+  function getCurrentKana() {
+    var kana = self.kana_displayed.innerHTML;
+
+    return self.kana.key('kana', kana);
   }
 
   function initKana(aKana) {
@@ -83,8 +86,17 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
     return kana;
   }
 
-  function getNextKana() {
-    var index = Math.floor(Math.random() * self.kana.length);
+  function getRandomIndex() {
+    return Math.floor(Math.random() * self.kana.length)
+  }
+
+  function getNextKana(kana) {
+    var index;
+
+    do {
+      index = getRandomIndex();
+    } while ( self.kana[index] == kana || self.kana.length == 1 )
+    
 
     return self.kana[index];
   }
