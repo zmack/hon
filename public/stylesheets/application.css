@@ -1,7 +1,8 @@
 #ball_counter {
   list-style: none;
   margin: 0 auto;
-  text-align: center; }
+  text-align: center;
+  height: 32px; }
   #ball_counter li {
     display: inline; }
 
