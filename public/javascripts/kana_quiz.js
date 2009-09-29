@@ -9,8 +9,18 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
 
   addFormHandlers();
   initKana(getSelectedKana());
+  addBallCounter();
+
   this.kana_check_element.hide();
 
+
+  function addBallCounter() {
+    var list = document.createElement('li');
+    list.id = 'ball_counter';
+
+    self.kana_check_element.before(list);
+    self.counter = new BallCounter(list);
+  }
 
   function addFormHandlers() {
     self.kana_list_element.submit(submitKanaList);
@@ -95,23 +105,25 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
 
     do {
       index = getRandomIndex();
-    } while ( self.kana[index] == kana || self.kana.length == 1 )
+    } while ( self.kana[index] == kana && self.kana.length != 1 )
     
 
     return self.kana[index];
   }
 
   function displayNextKana() {
-    var kana = getNextKana();
+    var kana = getNextKana(getCurrentKana());
 
     $(self.kana_displayed).html(kana.kana);
   }
 
   function addCorrectMatch(kana, romaji) {
+    self.counter.addCorrect(kana);
     console.log('Correct, sir, ' + kana.kana + ' is ' + kana.romaji);
   }
 
   function addFalseMatch(kana, romaji) {
+    self.counter.addWrong(kana);
     console.log('Wrong, ' + kana.kana + ' is ' + kana.romaji);
   }
 }
