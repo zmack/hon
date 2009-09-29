@@ -1,3 +1,10 @@
+#ball_counter {
+  list-style: none;
+  margin: 0 auto;
+  text-align: center; }
+  #ball_counter li {
+    display: inline; }
+
 #pick_kanas ul {
   list-style: none; }
   #pick_kanas ul li {
