@@ -20,17 +20,25 @@ BallCounter = function(list) {
     return list_item;
   }
 
+  function extendItem(item, obj) {
+    for( key in obj ) {
+      item[key] = obj[key];
+    }
+  }
+
   this.addCorrect = function(info) {
     var item = addImage('/images/balls/correct.png');
 
-    item.info = info;
+    extendItem(item, info);
   }
 
   this.addWrong = function(info) {
     var item = addImage('/images/balls/wrong.png');
 
-    item.info = info;
+    extendItem(item, info);
   }
+
+  
 
   self.reset = reset;
 }

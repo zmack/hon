@@ -118,12 +118,15 @@ KanaQuiz = function(kana_check_element, kana_list_element, options) {
   }
 
   function addCorrectMatch(kana, romaji) {
-    self.counter.addCorrect(kana);
-    console.log('Correct, sir, ' + kana.kana + ' is ' + kana.romaji);
+    var message = 'Correct, sir, ' + kana.kana + ' is ' + kana.romaji;
+    self.counter.addCorrect({ title: message });
+    console.log(message);
   }
 
   function addFalseMatch(kana, romaji) {
-    self.counter.addWrong(kana);
-    console.log('Wrong, ' + kana.kana + ' is ' + kana.romaji);
+    var message = 'Wrong, ' + kana.kana + ' is ' + kana.romaji;
+
+    self.counter.addWrong({ title: message });
+    console.log(message);
   }
 }
