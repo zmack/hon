@@ -9,5 +9,4 @@
 - form_tag(nil, :id => 'pick_kanas') do
   = submit_tag 'Start', :id => 'start'
   %ul
-    = render :partial => 'kana_item', :collection => @kanas
-
+    = render :partial => 'kana_group', :collection => @groups

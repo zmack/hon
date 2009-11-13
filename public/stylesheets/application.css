@@ -6,7 +6,10 @@
   #ball_counter li {
     display: inline; }
 
+#pick_kanas ul.digraph {
+  clear: none; }
 #pick_kanas ul {
+  clear: left;
   list-style: none; }
   #pick_kanas ul li {
     display: inline;

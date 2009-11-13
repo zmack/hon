@@ -22,7 +22,17 @@ class SightingsControllerTest < ActionController::TestCase
 
       should_respond_with :unprocessable_entity
     end
+
+    context "get index" do
+      setup do
+        get :index
+      end
+
+      should_respond_with :success
+      should_assign_to :groups
+    end
   end
+
 
   context "not logged in" do
     context "create" do

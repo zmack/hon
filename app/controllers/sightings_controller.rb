@@ -2,7 +2,7 @@ class SightingsController < ApplicationController
   before_filter :require_user
 
   def index
-    @kanas = Kana.all
+    @groups = Group.all(:include => :kanas)
   end
 
   def create

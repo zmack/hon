@@ -1,0 +1,2 @@
+%ul{ :class => ('digraph' if kana_group.digraph?) }
+  = render :partial => 'kana_item', :collection => kana_group.kanas
