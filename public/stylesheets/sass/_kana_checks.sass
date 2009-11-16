@@ -1,10 +1,21 @@
 @import _ball_counter
 
-#pick_kanas
-  ul.digraph
-    clear: none
+#pick_kanas 
   ul
+    position: relative
+    list-style: none
+    float: left
+    overflow: auto
+  li.group
     clear: left
+    float: left
+    overflow: auto
+
+  li.group.digraph
+    clear: none
+  
+#pick_kanas li.group
+  ul
     list-style: none
     li
       display: inline
@@ -33,6 +44,17 @@
       border: 1px solid #FFF
       span
         background-color: #EEE
+    li.name
+      font-size: .7em
+      background-color: #FFF
+      padding: .3em .5em
+      -moz-border-radius: .5em
+      -webkit-border-radius: .5em
+      position: absolute
+      opacity: .8
+      text-shadow: 1px 1px 1px #CCC
+      top: -.5em
+      left: 30px
 
 #check_kana
   width: 400px

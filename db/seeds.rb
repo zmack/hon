@@ -7,7 +7,7 @@
 #   Major.create(:name => 'Daley', :city => cities.first)
 
 # Seed Kanas
-group_single = Group.create(:name => 'single')
+group_single = Group.create(:name => 'basic')
 Kana.create( :romaji => 'a', :char => 'あ', :group => group_single)
 Kana.create( :romaji => 'i', :char => 'い', :group => group_single)
 Kana.create( :romaji => 'u', :char => 'う', :group => group_single)
